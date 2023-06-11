@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<!--<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="org.satal.diamonds.controller.Controller">-->
+<!--&lt;!&ndash;                  fx:controller="org.satal.diamonds.Controller">&ndash;&gt;-->
+<!--        &lt;!&ndash;              fx:controller="org.satal.diamonds.controller.HelloController">&ndash;&gt;-->
+<!--        &lt;!&ndash;              fx:controller="org.satal.diamonds.controller.Controller">&ndash;&gt;-->
+<!--    <padding>-->
+<!--        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>-->
+<!--    </padding>-->
+
+<!--    <Label fx:id="welcomeText"/>-->
+<!--    <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
+<!--</VBox>-->
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns:fx="http://javafx.com/fxml" fx:controller="org.satal.diamonds.controller.Controller">
+    <Pane fx:id="startPane" prefHeight="400.0" prefWidth="600.0" visible="false">
+        <Button alignment="CENTER" contentDisplay="TOP" layoutX="259.0" layoutY="182.0" onMouseClicked="#startGame" prefHeight="37.0" prefWidth="83.0" text="Старт" textAlignment="CENTER">
+        </Button>
+    </Pane>
+
+
+    <Pane fx:id="gridPane">
+        <VBox prefHeight="400.0" prefWidth="600.0">
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="600.0" VBox.vgrow="SOMETIMES">
+                <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Button" textAlignment="CENTER" />
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+            </ToolBar>
+            <Pane prefHeight="360.0" prefWidth="600.0">
+                <HBox prefHeight="360.0" prefWidth="600.0">
+                    <Pane fx:id="gameField" prefHeight="360.0" prefWidth="360.0" />
+                    <VBox prefHeight="360.0" prefWidth="240.0">
+                        <Label prefHeight="38.0" prefWidth="100.0" text="Очки">
+                            <padding>
+                                <Insets left="2.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets left="30.0" top="160.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label prefHeight="38.0" prefWidth="100.0" text="0">
+                            <VBox.margin>
+                                <Insets left="30.0" />
+                            </VBox.margin>
+                        </Label>
+                    </VBox>
+                </HBox>
+            </Pane>
+        </VBox>
+    </Pane>
+</Pane>
+
