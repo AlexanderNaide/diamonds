@@ -4,8 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.satal.diamonds.properties.Properties;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
 
@@ -21,6 +19,5 @@ public class GameApplication extends Application {
 
     public static void main(String[] args) {
         launch();
-
     }
 }

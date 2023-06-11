@@ -7,14 +7,14 @@ module org.satal.diamonds {
 //    requires validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    requires com.almasb.fxgl.all;
+//    requires com.almasb.fxgl.all;
 
     requires lombok;
-    requires spring.context;
-    requires spring.core;
-    requires spring.aop;
-    requires spring.beans;
-    requires java.annotation;
+//    requires spring.context;
+//    requires spring.core;
+//    requires spring.aop;
+//    requires spring.beans;
+//    requires java.annotation;
 
     opens org.satal.diamonds to javafx.fxml;
     exports org.satal.diamonds;

@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="450fcf23-dc4e-4f93-9933-4f072ca802fa" name="Changes" comment="" />
+    <list default="true" id="450fcf23-dc4e-4f93-9933-4f072ca802fa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/properties/PROP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/GameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/GameApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/GridString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/GridString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/properties/Properties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/properties/Properties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/AppView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/ButtonView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/ButtonView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/satal/diamonds/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/satal/diamonds/hello-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,13 +30,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2R3WCMnYzccvjrHzA8tmotWFL7I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -28,6 +49,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/GVoichuk/IdeaProjects/diamonds/src/main/java",
     "settings.editor.selected.configurable": "application.passwordSafe"
@@ -79,10 +101,33 @@
       <option name="presentableId" value="Default" />
       <updated>1686479118670</updated>
       <workItem from="1686479120135" duration="10711000" />
+      <workItem from="1686492518289" duration="14663000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/GameController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,35 +1,22 @@
 package org.satal.diamonds.properties;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
-
 
 @Data
-@Component
-@PropertySource("classpath:application.properties")
 public class Properties {
 
-    @Value("${window.height}")
-    private Integer windowHeight;
+    private static Integer windowHeight = 600;
 
-    @Value("${window.width}")
-    private Integer windowWidth;
+    private static Integer windowWidth = 400;
 
-    @Value("${gameWindow.height}")
-    private Integer gameWindowHeight;
+    private static Integer gameWindowHeight = 360;
 
-    @Value("${gameWindow.width}")
-    private Integer gameWindowWidth;
+    private static Integer gameWindowWidth = 360;
 
-    @Value("${grid.lineCount}")
-    private Integer gridLineCount;
+    private static Integer gridLineCount = 8;
 
-    @Value("${grid.height}")
-    private Integer gridHeight;
+    private static Integer gridHeight = 45;
 
-    @Value("${grid.width}")
-    private Integer gridWidth;
+    private static Integer gridWidth = 45;
 
 }
