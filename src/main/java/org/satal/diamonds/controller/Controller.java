@@ -1,6 +1,9 @@
 package org.satal.diamonds.controller;
 
 import javafx.fxml.Initializable;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 import org.satal.diamonds.model.Grid;
 import org.satal.diamonds.view.AppView;
 
@@ -39,5 +42,45 @@ public class Controller extends AppView implements Initializable {
             finish = super.updateField(gameController.getField());
 //            System.out.println("отправили updateField, сейчас finish = " + finish);
         }
+    }
+
+    public void OnDragDetected(MouseEvent mouseEvent) {
+        System.out.println("OnDragDetected");
+    }
+
+    public void OnDragDone(DragEvent dragEvent) {
+        System.out.println("OnDragDone");
+    }
+
+    public void OnDragDropped(DragEvent dragEvent) {
+        System.out.println("OnDragDropped");
+    }
+
+    public void OnDragEntered(DragEvent dragEvent) {
+        System.out.println("OnDragEntered");
+    }
+
+    public void OnDragExiterd(DragEvent dragEvent) {
+        System.out.println("OnDragExiterd");
+    }
+
+    public void OnDragOver(DragEvent dragEvent) {
+        System.out.println("OnDragOver");
+    }
+
+    public void OnMouseDragEnterd(MouseDragEvent event) {
+        System.out.println("OnMouseDragEnterd");
+    }
+
+    public void OnMouseDragExited(MouseDragEvent event) {
+        System.out.println("OnMouseDragExited");
+    }
+
+    public void OnMouseDragOver(MouseDragEvent event) {
+        System.out.println("OnMouseDragOver");
+    }
+
+    public void OnMouseDragReleased(MouseDragEvent event) {
+        System.out.println("OnMouseDragReleased");
     }
 }

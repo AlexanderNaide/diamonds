@@ -13,6 +13,7 @@ public class GameApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         scene.getStylesheets().add("styles.css");
+        stage.setResizable(false);
         stage.setTitle("Бриллиантики!");
         stage.setScene(scene);
         stage.show();
