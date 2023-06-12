@@ -1,21 +1,22 @@
 package org.satal.diamonds.properties;
 
 public enum PROP {
-    windowHeight(600),
-    windowWidth(400),
-    gameWindowHeight(360),
-    gameWindowWidth(360),
-    gridLineCount(8),
-    gridHeight(45),
-    gridWidth(45);
+    windowHeight(600.0),
+    windowWidth(400.0),
+    gameWindowHeight(360.0),
+    gameWindowWidth(360.0),
+    gridLineCount(8.0),
+    gridHeight(45.0),
+    gridWidth(45.0),
+    duration(600.0);
 
-    private final int value;
+    private final double value;
 
-    PROP(int i) {
+    PROP(double i) {
         this.value = i;
     }
 
-    public int getValue(){
+    public double getValue(){
         return value;
     }
 

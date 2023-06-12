@@ -1,10 +1,10 @@
 package org.satal.diamonds.model;
 
-public interface Grid {
-    String getTitle();
+import javafx.scene.control.Button;
 
-    int getLine();
-    int getCol();
+public abstract class Grid extends Button {
 
-    void setTitle(String n);
+    public abstract boolean getCorrect();
+    public abstract void setCorrect(boolean correct);
+    public abstract void fall(int i, int k);
 }

@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="450fcf23-dc4e-4f93-9933-4f072ca802fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/properties/PROP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/GameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/GameApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/GridString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/GridString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/properties/Properties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/properties/Properties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/GridString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/properties/PROP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/properties/PROP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/AppView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/ButtonView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/ButtonView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/ButtonView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/model/ButtonView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/satal/diamonds/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/satal/diamonds/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/satal/diamonds/view/gemeView/GridView.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +34,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,14 +55,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/GVoichuk/IdeaProjects/diamonds/src/main/java",
-    "settings.editor.selected.configurable": "application.passwordSafe"
+    "last_opened_file_path": "C:/Users/GVoichuk/IdeaProjects/diamonds/src/main/resources",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\GVoichuk\IdeaProjects\diamonds\src\main\java" />
       <recent name="C:\Users\GVoichuk\IdeaProjects\diamonds\src\main\resources" />
+      <recent name="C:\Users\GVoichuk\IdeaProjects\diamonds\src\main\java" />
       <recent name="C:\Users\GVoichuk\IdeaProjects\diamonds\src\main\java\org\satal\diamonds" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -118,16 +122,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/satal/diamonds/controller/GameController.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

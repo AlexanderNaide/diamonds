@@ -12,7 +12,8 @@ public class GameApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("Р‘СЂРёР»Р»РёР°РЅС‚РёРєРё!");
+        scene.getStylesheets().add("styles.css");
+        stage.setTitle("Бриллиантики!");
         stage.setScene(scene);
         stage.show();
     }
