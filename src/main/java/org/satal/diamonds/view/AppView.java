@@ -21,8 +21,8 @@ public class AppView{
         gridPane.setVisible(true);
     }
 
-    public void updateField(Grid[][] grids){
-        gameView.updateField(grids);
+    public boolean updateField(Grid[][] grids){
+        return gameView.updateField(grids);
     }
 
     public void test(){
