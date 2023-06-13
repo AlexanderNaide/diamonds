@@ -12,18 +12,20 @@ import org.satal.diamonds.properties.PROP;
 public class ButtonView extends Grid {
 
     private boolean correct;
-
     private final Duration dur;
 
-    public ButtonView(double gridSize, int i) {
+//    public ButtonView(double gridSize, int x, int i, int j) {
+    public ButtonView(double gridSize, int x) {
+//        super(i, j);
         this.correct = true;
-        this.setText(convertTitle(i));
-        this.dur = Duration.millis(PROP.duration.getValue());
+        this.setText(convertTitle(x));
+        this.dur = Duration.millis(PROP.duration.getValue() + 10000);
 //        this.title = "(" + line + ":" + col + ")";
         this.setPrefHeight(gridSize);
         this.setPrefWidth(gridSize);
         this.setAlignment(Pos.CENTER);
-        this.getStyleClass().add("button-view");
+        this.setOpacity(0.4);
+//        this.getStyleClass().add("button-view");
     }
 
     private String convertTitle(int i){
@@ -37,9 +39,17 @@ public class ButtonView extends Grid {
     }
 
     @Override
-    public void fall(int i, int k) {
+    public void fall() {
+        Platform.runLater(() -> fallThis());
+//        TranslateTransition transition = new TranslateTransition(dur, this);
+//        transition.setByY(i * PROP.gridHeight.getValue() - k * PROP.gridHeight.getValue());
+//        transition.play();
+    }
+
+    public void fallThis() {
         TranslateTransition transition = new TranslateTransition(dur, this);
-        transition.setByY(i * PROP.gridHeight.getValue() - k * PROP.gridHeight.getValue());
+        transition.setByY(i * PROP.gridHeight.getValue() - this.getLayoutY());
+        System.out.println("Отправили " + this.getText() + " на -" + (i));
         transition.play();
     }
 

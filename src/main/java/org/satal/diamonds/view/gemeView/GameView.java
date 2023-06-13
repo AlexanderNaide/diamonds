@@ -1,36 +1,69 @@
 package org.satal.diamonds.view.gemeView;
 
+import javafx.scene.layout.GridPane;
+import org.satal.diamonds.model.ButtonView;
 import org.satal.diamonds.model.Grid;
 import org.satal.diamonds.properties.PROP;
 import org.satal.diamonds.view.AppView;
 
-public class GameView {
+public class GameView extends GridPane {
 
     private final AppView appView;
-    private final double gridSize;
+//    private final double gridSize;
 
     public GameView(AppView appView) {
         this.appView = appView;
-        this.gridSize = PROP.gridHeight.getValue();
+        fill(PROP.gridLineCount.getValue());
     }
 
-    public boolean updateField(Grid[][] grids){
+    private void fill(Double count) {
+        for (int i = 0; i < count; i++) {
+            for (int j = 0; j < count; j++) {
+                this.add(new ButtonView(PROP.gridWidth.getValue(), (int) (Math.random() * 4) + 1), j, i);
+            }
+        }
+    }
+
+    public void update(){
+        for (int i = 0; i < this.getColumnCount(); i++) {
+            if (this.getCellBounds(i, 0).isEmpty()){
+                this.add(new ButtonView(PROP.gridWidth.getValue(), (int) (Math.random() * 4) + 1), i, 0);
+            }
+        }
+    }
+
+    public boolean renderingGrids(Grid[][] grids){
+//        parse(grids);
+//        for (int i = 0; i < grids.length; i++) {
+//            for (int j = 0; j < grids[i].length; j++) {
+//                if (grids[i][j] != null){
+//                    if(!grids[i][j].getCorrect()){
+////                        appView.gameField.getChildren().remove(grids[i][j]);
+//                        grids[i][j] = null;
+//                    } else if (!appView.gameField.getChildren().contains(grids[i][j])) {
+//                        grids[i][j].setLayoutX(j * gridSize);
+//                        grids[i][j].setLayoutY(i * gridSize);
+//                        appView.gameField.getChildren().add(grids[i][j]);
+//                    }
+//                }
+//            }
+//        }
+
 
         for (int i = 0; i < grids.length; i++) {
             for (int j = 0; j < grids[i].length; j++) {
-                if (grids[i][j] != null){
-                    if(!grids[i][j].getCorrect()){
-//                        appView.gameField.getChildren().remove(grids[i][j]);
-                        grids[i][j] = null;
-                    } else if (!appView.gameField.getChildren().contains(grids[i][j])) {
-                        grids[i][j].setLayoutX(j * gridSize);
-                        grids[i][j].setLayoutY(i * gridSize);
-                        appView.gameField.getChildren().add(grids[i][j]);
-                    }
+                if(grids[i][j] != null && !appView.gameField.getChildren().contains(grids[i][j])){
+//                    grids[i][j].setI(i);
+//                    grids[i][j].setJ(j);
+                    grids[i][j].setLayoutY(i * gridSize);
+                    grids[i][j].setLayoutX(j * gridSize);
+                    appView.gameField.getChildren().add(grids[i][j]);
                 }
             }
         }
-        parse(grids);
+//        System.out.println("Отрисовка всё");
+        parseGrids(grids);
+        deletedGrids(grids);
         return gridFall(grids);
 
 //        TranslateTransition transition = new TranslateTransition(duration, grids[0][0]);
@@ -40,29 +73,7 @@ public class GameView {
 //        transition.play();
     }
 
-    public boolean gridFall(Grid[][] grids){
-        boolean result = false;
-        for (int i = grids.length - 1; i >= 0; i--) {
-            for (int j = 0; j < grids[i].length; j++) {
-                if(grids[i][j] == null){
-                    result = true;
-                    for (int k = i - 1; k >= 0; k--) {
-                        if (grids[k][j] != null){
-                            grids[i][j] = grids[k][j];
-                            grids[i][j].fall(i, k);
-//                            appView.gameField.getChildren().remove(grids[k][j]);
-                            grids[k][j] = null;
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-//        System.out.println("gridFall " + !result);
-        return !result;
-    }
-
-    public void parse(Grid[][] grids){
+    private void parseGrids(Grid[][] grids){
         for (int i = 0; i < grids.length; i++) {
             for (int j = 0; j < grids[i].length; j++) {
                 if (grids[i][j] != null){
@@ -85,4 +96,44 @@ public class GameView {
             }
         }
     }
+
+    private void deletedGrids(Grid[][] grids){
+        for (int i = 0; i < grids.length; i++) {
+            for (int j = 0; j < grids[i].length; j++) {
+                if(grids[i][j] != null && !grids[i][j].getCorrect()){
+                    appView.gameField.getChildren().remove(grids[i][j]);
+                    grids[i][j] = null;
+                }
+            }
+        }
+    }
+
+    private boolean gridFall(Grid[][] grids){
+        System.out.println();
+        System.out.println("Начинаем");
+        boolean result = false;
+        for (int i = grids.length - 1; i >= 0; i--) {
+            for (int j = 0; j < grids[i].length; j++) {
+                if(grids[i][j] == null){
+                    System.out.println("нашли null в " + i + "|" + j);
+                    result = true;
+                    for (int k = i - 1; k >= 0; k--) {
+                        if (grids[k][j] != null){
+                            System.out.println("нашли " + grids[k][j].getText() + " в " + k + "|" + j + " переместили на " + i + "|" + j + ", " + k + "|" + j + " null" );
+                            grids[i][j] = grids[k][j];
+                            grids[i][j].setI(i);
+                            grids[i][j].setJ(j);
+//                            grids[i][j].fall();
+                            grids[k][j] = null;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+//        System.out.println("gridFall " + !result);
+        return !result;
+    }
+
+
 }

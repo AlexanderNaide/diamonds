@@ -4,21 +4,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
-import org.satal.diamonds.model.Grid;
 import org.satal.diamonds.view.AppView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 public class Controller extends AppView implements Initializable {
-
-
     private GameController gameController;
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        gameController = new GameController();
+        gameController = new GameController(gridPane);
         updateField();
     }
 
@@ -39,8 +34,33 @@ public class Controller extends AppView implements Initializable {
 //            }
 
 //            System.out.println("запросили updateField, сейчас finish = " + finish);
-            finish = super.updateField(gameController.getField());
+//            finish = super.updateField(gameController.getField());
+//            gameController.update();
+//            finish = super.updateField();
+
+//            gameView.renderingGrids(grids);
+
+//            finish = gameView.renderingGrids(grids);
+//            finish = gameView.renderingGrids(gridPane);
+            finish = gridPane.renderingGrids(gridPane);
+            if (!finish){
+                gameController.update();
+            }
+
 //            System.out.println("отправили updateField, сейчас finish = " + finish);
+            if (finish){
+//            Grid[][] grids = gameController.getField();
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    if (grids[i][j] != null){
+                        System.out.print(grids[i][j].getText());
+                    } else {
+                        System.out.print("-");
+                    }
+                }
+                System.out.println();
+            }
+            }
         }
     }
 
