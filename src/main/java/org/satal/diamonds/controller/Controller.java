@@ -8,21 +8,40 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import org.satal.diamonds.properties.PROP;
 import org.satal.diamonds.view.AppView;
+import org.satal.diamonds.view.gemeView.GameView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 public class Controller extends AppView implements Initializable {
-    public GridPane gridPane;
+//public class Controller {
+
+
+//    public GridPane gridPane;
+
 //    private GameController gameController;
+
+//    public Pane gameField;
+//    public Pane startPane;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        super(gridPane);
+        super.init();
+
+//        System.out.println(gameField.getChildren().size());
+//        this.gridPane = new GridPane();
+//        this.gridPane = new GameView(this);
+//        gridPane.setPrefSize(PROP.gameWindowHeight.getValue(), PROP.gameWindowWidth.getValue());
+//        System.out.println(gameField.getChildren().size());
+
+//        gameField.getChildren()
+//        gameField.getChildren().add(0, gridPane);
 
 //        gameController = new GameController(gridPane);
-        updateField();
+//        updateField();
 //        for (int i = 0; i < 8; i++) {
 //            for (int j = 0; j < 8; j++) {
 //                Label label = new Label("A");

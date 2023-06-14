@@ -4,9 +4,11 @@ import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.util.Callback;
 import javafx.util.Duration;
 import org.satal.diamonds.properties.PROP;
 
+import java.util.function.Consumer;
 
 
 public class ButtonView extends Grid {
@@ -24,7 +26,7 @@ public class ButtonView extends Grid {
         this.setPrefHeight(gridSize);
         this.setPrefWidth(gridSize);
         this.setAlignment(Pos.CENTER);
-        this.setOpacity(0.4);
+//        this.setOpacity(0.4);
 //        this.getStyleClass().add("button-view");
     }
 
@@ -39,26 +41,37 @@ public class ButtonView extends Grid {
     }
 
     @Override
-    public void fall() {
+//    public void fall(Consumer<ButtonView> consumer) {
+    public void fall(Callback<> callback) {
 //        Platform.runLater(() -> fallThis());
 //        TranslateTransition transition = new TranslateTransition(dur, this);
 //        transition.setByY(i * PROP.gridHeight.getValue() - k * PROP.gridHeight.getValue());
 //        transition.play();
+//        consumer.accept(this);
+        consumer.accept(this);
     }
 
-//    public void fallThis() {
+
+//    public void fall() {
+//        Platform.runLater(() -> fallThis());
 //        TranslateTransition transition = new TranslateTransition(dur, this);
-//        transition.setByY(i * PROP.gridHeight.getValue() - this.getLayoutY());
-//        System.out.println("Отправили " + this.getText() + " на -" + (i));
+//        transition.setByY(i * PROP.gridHeight.getValue() - k * PROP.gridHeight.getValue());
 //        transition.play();
 //    }
 
-    @Override
+    public void fallThis() {
+        TranslateTransition transition = new TranslateTransition(dur, this);
+        transition.setByY(i * PROP.gridHeight.getValue() - this.getLayoutY());
+//        System.out.println("Отправили " + this.getText() + " на -" + (i));
+        transition.play();
+    }
+
+//    @Override
     public boolean getCorrect() {
         return correct;
     }
 
-    @Override
+//    @Override
     public void setCorrect(boolean correct) {
         this.correct = correct;
     }

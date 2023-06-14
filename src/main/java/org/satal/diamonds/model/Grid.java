@@ -6,7 +6,8 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import lombok.Data;
 
-@Data
+import java.util.function.Consumer;
+
 public abstract class Grid extends Button {
 
 //    protected int i;
@@ -14,7 +15,7 @@ public abstract class Grid extends Button {
 //    protected int j;
     public abstract boolean getCorrect();
     public abstract void setCorrect(boolean correct);
-    public abstract void fall();
+    public abstract void fall(Consumer<ButtonView> consumer);
 
 //    public Grid(int i, int j) {
 //        this.setOnDragDetected(event -> {

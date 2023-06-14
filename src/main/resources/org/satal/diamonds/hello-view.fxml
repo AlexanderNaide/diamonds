@@ -20,15 +20,16 @@
         <Button alignment="CENTER" contentDisplay="TOP" layoutX="259.0" layoutY="182.0" onMouseClicked="#startGame" prefHeight="37.0" prefWidth="83.0" text="Старт" textAlignment="CENTER">
         </Button>
     </Pane>
-     <VBox fx:id="gameField" prefHeight="400.0" prefWidth="600.0">
+     <VBox prefHeight="400.0" prefWidth="600.0">
          <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="600.0" VBox.vgrow="SOMETIMES">
              <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#test" text="Button" textAlignment="CENTER" />
              <VBox.margin>
                  <Insets />
              </VBox.margin>
          </ToolBar>
-          <HBox prefHeight="360.0" prefWidth="600.0">
-               <GridPane fx:id="gridPane" prefHeight="360.0" prefWidth="360.0">
+<!--          <HBox fx:id="gameField" prefHeight="360.0" prefWidth="600.0">-->
+          <HBox fx:id="gameField" prefHeight="360.0" prefWidth="600.0">
+<!--               <GridPane fx:id="gridPane" prefHeight="360.0" prefWidth="360.0">-->
 <!--                            <columnConstraints>-->
 <!--                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />-->
 <!--                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />-->
@@ -49,7 +50,7 @@
 <!--               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />-->
 <!--                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />-->
 <!--                            </rowConstraints>-->
-                        </GridPane>
+<!--                        </GridPane>-->
               <VBox prefHeight="360.0" prefWidth="240.0">
                   <Label prefHeight="38.0" prefWidth="100.0" text="Очки">
                       <padding>
