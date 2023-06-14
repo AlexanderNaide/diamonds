@@ -1,25 +1,40 @@
 package org.satal.diamonds.controller;
 
 import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
+import javafx.scene.control.Label;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import org.satal.diamonds.view.AppView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 public class Controller extends AppView implements Initializable {
-    private GameController gameController;
+    public GridPane gridPane;
+//    private GameController gameController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        gameController = new GameController(gridPane);
+        super(gridPane);
+
+//        gameController = new GameController(gridPane);
         updateField();
+//        for (int i = 0; i < 8; i++) {
+//            for (int j = 0; j < 8; j++) {
+//                Label label = new Label("A");
+//                GridPane.setHalignment(label, HPos.CENTER);
+//                gridPane.add(label, j, i);
+//            }
+//        }
     }
 
     private void updateField(){
         boolean finish = false;
-        while (!finish){
+//        while (!finish){
 
 //            Grid[][] grids = gameController.getField();
 //            for (int i = 0; i < 8; i++) {
@@ -42,26 +57,26 @@ public class Controller extends AppView implements Initializable {
 
 //            finish = gameView.renderingGrids(grids);
 //            finish = gameView.renderingGrids(gridPane);
-            finish = gridPane.renderingGrids(gridPane);
-            if (!finish){
-                gameController.update();
-            }
+//            finish = gridPane.renderingGrids(gridPane);
+//            if (!finish){
+//                gameController.update();
+//            }
 
 //            System.out.println("отправили updateField, сейчас finish = " + finish);
-            if (finish){
-//            Grid[][] grids = gameController.getField();
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 8; j++) {
-                    if (grids[i][j] != null){
-                        System.out.print(grids[i][j].getText());
-                    } else {
-                        System.out.print("-");
-                    }
-                }
-                System.out.println();
-            }
-            }
-        }
+//            if (finish){
+////            Grid[][] grids = gameController.getField();
+//                for (int i = 0; i < 8; i++) {
+//                    for (int j = 0; j < 8; j++) {
+//                        if (grids[i][j] != null){
+//                            System.out.print(grids[i][j].getText());
+//                        } else {
+//                            System.out.print("-");
+//                        }
+//                    }
+//                    System.out.println();
+//                }
+//            }
+//        }
     }
 
     public void OnDragDetected(MouseEvent mouseEvent) {

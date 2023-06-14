@@ -40,18 +40,18 @@ public class ButtonView extends Grid {
 
     @Override
     public void fall() {
-        Platform.runLater(() -> fallThis());
+//        Platform.runLater(() -> fallThis());
 //        TranslateTransition transition = new TranslateTransition(dur, this);
 //        transition.setByY(i * PROP.gridHeight.getValue() - k * PROP.gridHeight.getValue());
 //        transition.play();
     }
 
-    public void fallThis() {
-        TranslateTransition transition = new TranslateTransition(dur, this);
-        transition.setByY(i * PROP.gridHeight.getValue() - this.getLayoutY());
-        System.out.println("Отправили " + this.getText() + " на -" + (i));
-        transition.play();
-    }
+//    public void fallThis() {
+//        TranslateTransition transition = new TranslateTransition(dur, this);
+//        transition.setByY(i * PROP.gridHeight.getValue() - this.getLayoutY());
+//        System.out.println("Отправили " + this.getText() + " на -" + (i));
+//        transition.play();
+//    }
 
     @Override
     public boolean getCorrect() {
