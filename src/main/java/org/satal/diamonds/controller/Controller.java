@@ -1,5 +1,6 @@
 package org.satal.diamonds.controller;
 
+import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
 import javafx.scene.control.Label;
@@ -30,6 +31,8 @@ public class Controller extends AppView implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.init();
+
+
 
 //        System.out.println(gameField.getChildren().size());
 //        this.gridPane = new GridPane();

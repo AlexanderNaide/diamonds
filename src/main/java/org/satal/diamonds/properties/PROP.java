@@ -8,7 +8,7 @@ public enum PROP {
     gridLineCount(8.0),
     gridHeight(45.0),
     gridWidth(45.0),
-    duration(600.0);
+    duration(300.0);
 
     private final double value;
 

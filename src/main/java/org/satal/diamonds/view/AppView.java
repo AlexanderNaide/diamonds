@@ -30,8 +30,11 @@ public class AppView {
     public Pane gameField;
     public GridPane gridPane;
 
+    GameView gameView;
+
     public void init(){
-        gridPane = new GameView(this);
+        gameView = new GameView(this);
+        gridPane = gameView;
         gridPane.setPrefSize(PROP.gameWindowHeight.getValue(), PROP.gameWindowWidth.getValue());
         gameField.getChildren().add(0, gridPane);
     }
@@ -73,10 +76,9 @@ public class AppView {
 //        return gameView.updateField(grids);
 //    }
 
-    @FXML
+
     public void test(){
-        System.out.println();
-        System.out.println();
+        gameView.test_getRemoved();
     }
 
 //    @Override

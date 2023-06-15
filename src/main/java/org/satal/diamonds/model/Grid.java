@@ -15,7 +15,8 @@ public abstract class Grid extends Button {
 //    protected int j;
     public abstract boolean getCorrect();
     public abstract void setCorrect(boolean correct);
-    public abstract void fall(Consumer<ButtonView> consumer);
+    public abstract void fall(int startPosition, int endPosition);
+    public abstract void slide(int startPosition, int endPosition);
 
 //    public Grid(int i, int j) {
 //        this.setOnDragDetected(event -> {

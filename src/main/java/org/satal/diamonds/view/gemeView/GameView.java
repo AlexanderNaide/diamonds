@@ -15,35 +15,74 @@ import org.satal.diamonds.model.Grid;
 import org.satal.diamonds.properties.PROP;
 import org.satal.diamonds.view.AppView;
 
+import javax.security.auth.callback.Callback;
+
 public class GameView extends GridPane {
 
     private final AppView appView;
     private final double count;
+    private boolean generation;
+
+    private ButtonView temp;
 
     public GameView(AppView appView) {
+        generation = true;
         this.appView = appView;
-//        this.setHgap(5.0);
-//        this.setVgap(5.0);
-        this.count = PROP.gridLineCount.getValue();
+        count = PROP.gridLineCount.getValue();
         generationProcess();
     }
 
     private void generationProcess(){
-        boolean done = true;
+//        boolean done = true;
+//        fillOne();
         fill();
+        updateProcess();
+//        while (done) {
+//            parseGrids();
+//            deletedGrids();
+//            gridFall();
+//            done = update();
+//        }
+        generation = false;
+//        rename();
+    }
+
+    public void updateProcess(){
+        boolean done = true;
         while (done) {
             parseGrids();
             deletedGrids();
-            done = gridFall();
-            update();
+            gridFall();
+            done = update();
         }
-//        rename();
+    }
+
+    public void test_getRemoved(){
+//        ButtonView buttonView = this.get(0, 0);
+//        ButtonView buttonViewN = this.get(0, 1);
+//        System.out.println("0 - " + buttonView);
+//        System.out.println("1 - " + buttonViewN);
+//        if (buttonView != null){
+//            buttonView.fall(0, 1);
+//            setRowIndex(buttonView, 1);
+//        }
+
+//        for (int i = 0; i < count; i++) {
+//            System.out.print(this.get(i, 0).getText() + " ");
+//        }
+//        System.out.println();
+
+        this.updateBounds();
+    }
+
+    private void fillOne() {
+        this.add(new ButtonView(this, PROP.gridWidth.getValue(), (int) (Math.random() * 4) + 1), 0, 0);
     }
 
     private void fill() {
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < count; j++) {
-                this.add(new ButtonView(PROP.gridWidth.getValue(), (int) (Math.random() * 4) + 1), j, i);
+                this.add(new ButtonView(this, PROP.gridWidth.getValue(), (int) (Math.random() * 4) + 1), j, i);
             }
         }
     }
@@ -60,12 +99,15 @@ public class GameView extends GridPane {
         return (ButtonView) result;
     }
 
-    public void update(){
+    public boolean update(){
+        boolean result = false;
         for (int i = 0; i < this.getColumnCount(); i++) {
             if (this.get(i, 0) == null){
-                this.add(new ButtonView(PROP.gridWidth.getValue(), (int) (Math.random() * 4) + 1), i, 0);
+                result = true;
+                this.add(new ButtonView(this, PROP.gridWidth.getValue(), (int) (Math.random() * 4) + 1), i, 0);
             }
         }
+        return result;
     }
 
     private void parseGrids(){
@@ -114,19 +156,21 @@ public class GameView extends GridPane {
         }
     }
 
-    private boolean gridFall(){
-        boolean result = false;
+    private void gridFall(){
+
         for (int i = (int) (count - 1); i >= 0; i--) { // строка
             for (int j = 0; j < count; j++) { // столбец
                 if(this.get(j, i) == null){
-                    result = true;
+
                     for (int k = i - 1; k >= 0; k--) {
                         ButtonView r = this.get(j, k);
                         if (r != null){
 //                            System.out.println("Было " + getRowIndex(r) + "|" + getColumnIndex(r) + " - " + r.getText());
-                            int finalI = i;
-                            r.fall(c -> setRowIndex(r, finalI));
-//                            setRowIndex(r, i);
+                            if(!generation){
+                                r.fall(k, i);
+                            } else {
+                                setRowIndex(r, i);
+                            }
 //                            System.out.println("Стало " + getRowIndex(r) + "|" + getColumnIndex(r) + " - " + r.getText());
                             break;
                         }
@@ -134,7 +178,7 @@ public class GameView extends GridPane {
                 }
             }
         }
-        return result;
+
     }
 
     private void rename(){
@@ -143,5 +187,42 @@ public class GameView extends GridPane {
         }
     }
 
+    public void changingByClick(ButtonView buttonView){
+        if (temp == null){
+            temp = buttonView;
+        } else {
+            changing(temp, buttonView);
+            temp = null;
+        }
+    }
+
+    private void changing(ButtonView one, ButtonView two){
+//        System.out.println("Пришло " + one.getText() + " & " + two.getText());
+        int oneRow = getRowIndex(one);
+        int twoRow = getRowIndex(two);
+        int oneCol = getColumnIndex(one);
+        int twoCol = getColumnIndex(two);
+//        System.out.printf("%s col=%d row=%d; %s col=%d row=%d \n", one.getText(), oneCol, oneRow, two.getText(), twoCol, twoRow);
+        if (oneRow == twoRow){
+            one.slide(oneCol, twoCol);
+            two.slide(twoCol, oneCol);
+//            ButtonView temp = one;
+//            setColumnIndex(one, twoCol);
+//            setColumnIndex(two, oneCol);
+        } else if (oneCol == twoCol) {
+            one.fall(oneRow, twoRow);
+            two.fall(twoRow, oneRow);
+//            ButtonView temp = one;
+//            setRowIndex(one, twoRow);
+//            setRowIndex(two, oneRow);
+        }
+
+//        updateProcess();
+    }
+
+    public synchronized void test(){
+        parseGrids();
+        deletedGrids();
+    }
 
 }
