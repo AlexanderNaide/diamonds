@@ -39,6 +39,13 @@ public class AppView {
         gameField.getChildren().add(0, gridPane);
     }
 
+    public void restart(MouseEvent mouseEvent) {
+        gameView = new GameView(this);
+        gridPane = gameView;
+        gridPane.setPrefSize(PROP.gameWindowHeight.getValue(), PROP.gameWindowWidth.getValue());
+        gameField.getChildren().add(0, gridPane);
+    }
+
 //    public AppView() {
 //        this.gameView = new GameView(this);
 //        this.gridPane = new GameView(this);

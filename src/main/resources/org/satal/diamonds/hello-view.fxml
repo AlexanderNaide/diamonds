@@ -17,11 +17,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.satal.diamonds.controller.Controller">
     <Pane fx:id="startPane" prefHeight="400.0" prefWidth="600.0" visible="false">
+
         <Button alignment="CENTER" contentDisplay="TOP" layoutX="259.0" layoutY="182.0" onMouseClicked="#startGame" prefHeight="37.0" prefWidth="83.0" text="Старт" textAlignment="CENTER">
         </Button>
     </Pane>
      <VBox prefHeight="400.0" prefWidth="600.0">
          <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="600.0" VBox.vgrow="SOMETIMES">
+             <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#restart" text="Начать заново" textAlignment="CENTER" />
              <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#test" text="Test" textAlignment="CENTER" />
              <VBox.margin>
                  <Insets />
